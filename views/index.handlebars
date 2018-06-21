@@ -1,0 +1,73 @@
+<div class="row">
+  <header class="col-md-12" id="header">
+    <h1>Eat Da Burger!</h1>
+  </header>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12">
+      <h2>Add a Burger</h2>
+      <form class="create-update-form" action="/burger/create" method="POST" , id="form1">
+
+        <div class="form-group">
+          <label for="ca">Burger Name:</label>
+          <input type="text" id="ca" name="name">
+        </div>
+
+        <button type="submit">Add burger</button>
+      </form>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-6">
+      <h2>Burgers That Are to be Devoured!</h2>
+
+      <ul>
+        {{#each burgers}} {{#unless this.devoured}}
+        <li>
+          {{this.burger_name}}
+
+          <form action="/burgers/eat?_method=PUT" method="POST">
+            <input type="hidden" name="burger_id" value={{this.id}}>
+            <button type="submit">Submit!</button>
+          </form>
+
+          {{!-- {{> burgers/delete-burger}} --}}
+        </li>
+        {{/unless}} {{/each}}
+      </ul>
+    </div>
+    <div class="col-lg-6">
+      <h2>Burgers That Are Devoured!</h2>
+      <ul>
+        {{#each burgers}} {{#if this.devoured}}
+        <li>
+          {{this.burger_name}}
+
+          <form action="/burgers/update?_method=PUT" method="POST">
+            <input type="hidden" name="burger_id" value={{this.id}} id="input_devoured">
+            <button type="submit">Submit!</button>
+          </form>
+
+          {{!-- {{> burgers/delete-burger}} --}}
+        </li>
+        {{/if}} {{/each}}
+      </ul>
+    </div>
+  </div>
+  <script type="text/javascript">
+
+  </script>
+
+
+
+
+
+
+
+
+</div>
