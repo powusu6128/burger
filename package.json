@@ -1,25 +1,14 @@
 {
   "name": "burger",
   "version": "1.0.0",
-  "description": "burger app to eat with options to get, post and put an order",
+  "description": "",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/powusu6128/burger.git"
-  },
-  "keywords": [
-    "burger"
-  ],
-  "author": "philip",
+  "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/powusu6128/burger/issues"
-  },
-  "homepage": "https://github.com/powusu6128/burger#readme",
   "dependencies": {
     "body-parser": "^1.18.3",
     "express": "^4.16.3",

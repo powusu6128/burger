@@ -1,9 +1,12 @@
--- Create the database burger_db and specified it for use.
-CREATE DATABASE burger_db;
-USE burger_db;
+-- if burgers_db already exists drop it --
+DROP DATABASE IF EXISTS burgers_db;
+CREATE DATABASE burgers_db;
 
--- Create the table burgers.
+USE burgers_db;
+
 CREATE TABLE burgers(
-id int NOT NULL AUTO_INCREMENT PRIMARY KEY,
-burger varchar(255) NOT NULL
+	item_id INTEGER PRIMARY KEY AUTO_INCREMENT,
+    burger_name TEXT NOT NULL,
+    devoured BOOLEAN DEFAULT FALSE,
+    date_time TIMESTAMP NOT NULL
 );
